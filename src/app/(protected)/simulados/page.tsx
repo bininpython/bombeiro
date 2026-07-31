@@ -2,7 +2,7 @@
 
 
 import Link from 'next/link';
-import { ClipboardCheck, PlusCircle, ArrowRight, History, Play } from 'lucide-react';
+import { ClipboardCheck, History, Play, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

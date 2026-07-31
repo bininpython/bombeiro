@@ -1,7 +1,7 @@
 'use client';
 
 
-import { BarChart3, TrendingUp, Calendar as CalendarIcon, Activity } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TAF_TESTS, TAF_TEST_ORDER } from '@/lib/taf/constants';
 import { cn } from '@/lib/utils';
