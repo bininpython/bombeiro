@@ -1,6 +1,6 @@
 'use client';
 
-import { Settings, Moon, Sun, Bell, Monitor } from 'lucide-react';
+import { Settings, Moon, Sun, Monitor } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
