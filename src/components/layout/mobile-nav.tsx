@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, PlusCircle, Map, Trophy, User } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, Trophy, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Início', icon: LayoutDashboard },
-  { href: '/roadmap', label: 'Roadmap', icon: Map },
-  { href: '/treinos/novo', label: 'Treino', icon: PlusCircle, isAction: true },
   { href: '/ranking', label: 'X1', icon: Trophy },
+  { href: '/treinos/novo', label: 'Registrar', icon: PlusCircle, isAction: true },
   { href: '/perfil', label: 'Perfil', icon: User },
 ];
 

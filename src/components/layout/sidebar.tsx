@@ -5,14 +5,6 @@ import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
   PlusCircle,
-  Map,
-  Calendar,
-  ClipboardCheck,
-  BarChart3,
-  Award,
-  Settings,
-  Target,
-  BookOpen,
   LogOut,
   User,
   Trophy,
@@ -24,20 +16,12 @@ import { useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Visão Geral', icon: LayoutDashboard },
-  { href: '/treinos/novo', label: 'Registrar Treino', icon: PlusCircle, highlight: true },
-  { href: '/roadmap', label: 'Roadmap', icon: Map },
-  { href: '/calendario', label: 'Calendário', icon: Calendar },
-  { href: '/simulados', label: 'Simulados', icon: ClipboardCheck },
-  { href: '/analises', label: 'Análises', icon: BarChart3 },
-  { href: '/pontuacao', label: 'Pontuação', icon: Target },
-  { href: '/ranking', label: 'X1 / Ranking', icon: Trophy, highlight: true },
-  { href: '/regras', label: 'Regras', icon: BookOpen },
-  { href: '/conquistas', label: 'Conquistas', icon: Award },
+  { href: '/ranking', label: 'X1 (Ranking)', icon: Trophy, highlight: true },
+  { href: '/treinos/novo', label: 'Registrar Tempo', icon: PlusCircle },
 ];
 
 const BOTTOM_ITEMS = [
   { href: '/perfil', label: 'Perfil', icon: User },
-  { href: '/configuracoes', label: 'Configurações', icon: Settings },
 ];
 
 export function Sidebar() {
