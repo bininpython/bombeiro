@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 16% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 16% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 16% 8%;
+    --primary: 0 72% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 92%;
+    --secondary-foreground: 220 16% 15%;
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 8% 45%;
+    --accent: 20 90% 95%;
+    --accent-foreground: 20 90% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 0 72% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 220 18% 5%;
+    --foreground: 0 0% 95%;
+    --card: 220 14% 10%;
+    --card-foreground: 0 0% 93%;
+    --popover: 220 14% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 72% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 12% 16%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 8% 55%;
+    --accent: 220 12% 16%;
+    --accent-foreground: 20 95% 60%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
+    --ring: 0 72% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-muted-foreground/20 hover:bg-muted-foreground/30;
+  }
+}
+
+@layer components {
+  /* Score color utilities */
+  .score-below {
+    @apply text-red-500 dark:text-red-400;
+  }
+
+  .score-minimum {
+    @apply text-yellow-500 dark:text-yellow-400;
+  }
+
+  .score-passing {
+    @apply text-green-500 dark:text-green-400;
+  }
+
+  .score-high {
+    @apply text-amber-500 dark:text-amber-400;
+  }
+
+  .score-maximum {
+    @apply text-fire-500 dark:text-fire-400;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-ember-500 to-fire-500 bg-clip-text text-transparent;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-card/80 backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  /* Touch-friendly sizing for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
