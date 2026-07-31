@@ -19,7 +19,7 @@ const DEMO_HISTORY = [
 
 export default function AnalysisPage() {
   const [activeTab, setActiveTab] = useState<string>(TAF_TEST_ORDER[0]);
-  const config = TAF_TESTS[activeTab]!;
+
 
   return (
     <div className="space-y-6 animate-fade-in">
