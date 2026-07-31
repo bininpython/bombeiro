@@ -20,11 +20,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { calculateOfficialScore, calculateFinalTafScore, STATUS_LABELS } from '@/lib/taf/scoring';
+import { calculateOfficialScore, calculateFinalTafScore } from '@/lib/taf/scoring';
 import { calculateProgressToMinimum } from '@/lib/taf/progress';
 import { formatTestValue, formatDifference } from '@/lib/taf/time';
 import { TAF_TESTS, TAF_TEST_ORDER } from '@/lib/taf/constants';
-import type { TafTestType } from '@/lib/taf/types';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
