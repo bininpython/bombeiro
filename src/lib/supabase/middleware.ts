@@ -58,20 +58,7 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // If authenticated, check if onboarding is completed
-  if (user && isProtectedRoute && !isOnboardingRoute) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('onboarding_completed')
-      .eq('id', user.id)
-      .single();
-
-    if (profile && !profile.onboarding_completed) {
-      const url = request.nextUrl.clone();
-      url.pathname = '/onboarding';
-      return NextResponse.redirect(url);
-    }
-  }
+  // Onboarding removed for X1 version
 
   return supabaseResponse;
 }
