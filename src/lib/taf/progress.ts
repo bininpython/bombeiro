@@ -5,7 +5,6 @@
 
 import type {
   TafTestType,
-  ProgressResult,
   TrendType,
   ConsistencyStatus,
   TrainingResultEntry,
@@ -16,10 +15,8 @@ import type {
 import {
   TAF_TESTS,
   getMinimumValueForTest,
-  getMaximumValueForTest,
   MINIMUM_PASSING_SCORE,
 } from './constants';
-import { calculateOfficialScore } from './scoring';
 
 // =============================================================================
 // calculateProgressToMinimum

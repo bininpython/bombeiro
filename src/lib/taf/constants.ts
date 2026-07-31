@@ -7,7 +7,7 @@
 // All time-based values are stored in SECONDS (with decimals for centiseconds).
 // =============================================================================
 
-import type { TafTestConfig, ScoreRange } from './types';
+import type { TafTestConfig, ScoreRange, TafTestType } from './types';
 
 // =============================================================================
 // Score Ranges — Pull Up (Barra Fixa Dinâmica)
