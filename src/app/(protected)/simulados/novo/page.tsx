@@ -4,12 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import { 
-  ClipboardCheck, 
   ChevronLeft, 
   Wand2, 
   Play,
-  CheckCircle2,
-  AlertTriangle
+  CheckCircle2
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

@@ -9,7 +9,8 @@ import {
   Dumbbell,
   ArrowUpFromLine,
   Zap,
-  Waves
+  Waves,
+  Target
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TAF_TESTS, TAF_TEST_ORDER } from '@/lib/taf/constants';

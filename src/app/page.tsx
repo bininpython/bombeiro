@@ -7,7 +7,6 @@ import {
   Waves,
   BarChart3,
   Target,
-  Shield,
   TrendingUp,
   ClipboardCheck,
   ChevronRight,
