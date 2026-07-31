@@ -60,7 +60,7 @@ export default async function RankingPage() {
         const testResults = userResults.filter(r => r.test_slug === slug);
         if (testResults.length > 0) {
           // Sort to get best: 1st by official score, 2nd by raw value (taking lowerIsBetter into account)
-          const isLowerBetter = TEST_INFO[slug].lowerIsBetter;
+          const isLowerBetter = TEST_INFO[slug]?.lowerIsBetter ?? false;
           testResults.sort((a, b) => {
             if (a.official_score !== b.official_score) return b.official_score - a.official_score;
             return isLowerBetter ? a.raw_value - b.raw_value : b.raw_value - a.raw_value;
