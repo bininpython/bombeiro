@@ -66,8 +66,8 @@ export default async function RankingPage() {
             return isLowerBetter ? a.raw_value - b.raw_value : b.raw_value - a.raw_value;
           });
           bestResults[slug] = {
-            raw_value: testResults[0].raw_value,
-            official_score: testResults[0].official_score
+            raw_value: testResults[0]?.raw_value ?? 0,
+            official_score: testResults[0]?.official_score ?? 0
           };
         }
       });
