@@ -59,7 +59,7 @@ export default function NewTrainingPage() {
   const [step, setStep] = useState(preselectedTest ? 2 : 1);
   const [selectedTest, setSelectedTest] = useState<TafTestType | null>(preselectedTest);
   const [scoringResult, setScoringResult] = useState<ReturnType<typeof calculateOfficialScore> | null>(null);
-  const [saved, setSaved] = useState(false);
+
 
   const {
     register,
@@ -124,7 +124,7 @@ export default function NewTrainingPage() {
     // const supabase = createClient();
     // await supabase.from('training_sessions').insert(...)
 
-    setSaved(true);
+
     setStep(4);
   }
 
@@ -272,7 +272,7 @@ export default function NewTrainingPage() {
             variant="outline"
             className="flex-1"
             onClick={() => {
-              setSaved(false);
+
               setScoringResult(null);
               setStep(1);
               setSelectedTest(null);

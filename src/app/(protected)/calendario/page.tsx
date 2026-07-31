@@ -4,10 +4,10 @@
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+
 
 export default function CalendarPage() {
-  const [currentDate, setCurrentDate] = useState(new Date());
+
 
   // Demo calendar data
   const days = Array.from({ length: 35 }, (_, i) => i + 1 - 4); // Simulating a calendar grid
