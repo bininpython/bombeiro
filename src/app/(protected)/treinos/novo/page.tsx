@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -51,7 +51,7 @@ const trainingSchema = z.object({
 
 type TrainingForm = z.infer<typeof trainingSchema>;
 
-export default function NewTrainingPage() {
+function NewTrainingContent() {
 
   const searchParams = useSearchParams();
   const preselectedTest = searchParams.get('prova') as TafTestType | null;
@@ -451,5 +451,17 @@ export default function NewTrainingPage() {
         </Button>
       </form>
     </div>
+  );
+}
+
+export default function NewTrainingPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    }>
+      <NewTrainingContent />
+    </Suspense>
   );
 }
