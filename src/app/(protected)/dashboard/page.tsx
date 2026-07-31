@@ -81,10 +81,6 @@ export default function DashboardPage() {
   });
 
   // Calculate final TAF score
-  const validResults = TAF_TEST_ORDER
-    .filter((t) => DEMO_RESULTS[t] !== null)
-    .map((t) => ({ testType: t, rawValue: DEMO_RESULTS[t]! }));
-
   const finalScore = calculateFinalTafScore(
     TAF_TEST_ORDER.map((t) => ({
       testType: t,
