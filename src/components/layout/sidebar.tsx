@@ -15,6 +15,7 @@ import {
   BookOpen,
   LogOut,
   User,
+  Trophy,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/shared/logo';
@@ -29,6 +30,7 @@ const NAV_ITEMS = [
   { href: '/simulados', label: 'Simulados', icon: ClipboardCheck },
   { href: '/analises', label: 'Análises', icon: BarChart3 },
   { href: '/pontuacao', label: 'Pontuação', icon: Target },
+  { href: '/ranking', label: 'X1 / Ranking', icon: Trophy, highlight: true },
   { href: '/regras', label: 'Regras', icon: BookOpen },
   { href: '/conquistas', label: 'Conquistas', icon: Award },
 ];
