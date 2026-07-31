@@ -8,18 +8,23 @@ $headers = @{
 }
 
 $body = @{
-    email = "test200@bombeiro.com"
+    email = "test400@bombeiro.com"
     password = "Password123!"
     data = @{
-        full_name = "Test"
+        full_name = "Test400"
     }
 } | ConvertTo-Json
 
 try {
-    Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
+    $res = Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
+    Write-Host "Success!"
+    $res | ConvertTo-Json
 } catch {
-    $stream = $_.Exception.Response.GetResponseStream()
-    $reader = New-Object IO.StreamReader($stream)
-    $responseBody = $reader.ReadToEnd()
-    Write-Host "Error Body: $responseBody"
+    Write-Host "Exception: $($_.Exception.Message)"
+    if ($_.Exception.Response) {
+        $stream = $_.Exception.Response.GetResponseStream()
+        $reader = New-Object IO.StreamReader($stream)
+        $responseBody = $reader.ReadToEnd()
+        Write-Host "Error Body: $responseBody"
+    }
 }
