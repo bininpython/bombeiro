@@ -1,6 +1,6 @@
 'use client';
 
-import { Metadata } from 'next';
+
 import { 
   Map, 
   CheckCircle2, 
