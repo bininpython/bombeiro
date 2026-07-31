@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+
 import { 
   ClipboardCheck, 
   ChevronLeft, 
@@ -16,7 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export default function NewSimulationPage() {
-  const router = useRouter();
+
   const [step, setStep] = useState(1);
   const [isGenerating, setIsGenerating] = useState(false);
 

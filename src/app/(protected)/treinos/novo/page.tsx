@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -52,7 +52,7 @@ const trainingSchema = z.object({
 type TrainingForm = z.infer<typeof trainingSchema>;
 
 export default function NewTrainingPage() {
-  const router = useRouter();
+
   const searchParams = useSearchParams();
   const preselectedTest = searchParams.get('prova') as TafTestType | null;
 
