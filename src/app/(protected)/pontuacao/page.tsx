@@ -3,7 +3,7 @@
 import { Target } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { TAF_TEST_ORDER, TAF_TESTS } from '@/lib/taf/constants';
-import { formatTestValue } from '@/lib/taf/time';
+
 
 export default function ScoreSystemPage() {
   return (

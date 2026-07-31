@@ -4,8 +4,6 @@
 import { 
   Map, 
   CheckCircle2, 
-  Circle, 
-  ChevronRight, 
   Lock,
   Timer,
   Dumbbell,
@@ -14,8 +12,6 @@ import {
   Waves
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { TAF_TESTS, TAF_TEST_ORDER } from '@/lib/taf/constants';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
