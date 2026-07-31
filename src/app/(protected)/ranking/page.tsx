@@ -158,22 +158,22 @@ export default async function RankingPage() {
               
               if (resA && resB) {
                 if (resA.official_score > resB.official_score) {
-                  winnerId = competitors[0].id;
+                  winnerId = competitors[0]?.id ?? null;
                 } else if (resB.official_score > resA.official_score) {
-                  winnerId = competitors[1].id;
+                  winnerId = competitors[1]?.id ?? null;
                 } else {
                   // Tie break with raw value
                   if (resA.raw_value === resB.raw_value) {
                     tied = true;
                   } else {
                     const aWins = info.lowerIsBetter ? resA.raw_value < resB.raw_value : resA.raw_value > resB.raw_value;
-                    winnerId = aWins ? competitors[0].id : competitors[1].id;
+                    winnerId = aWins ? (competitors[0]?.id ?? null) : (competitors[1]?.id ?? null);
                   }
                 }
               } else if (resA && !resB) {
-                winnerId = competitors[0].id;
+                winnerId = competitors[0]?.id ?? null;
               } else if (!resA && resB) {
-                winnerId = competitors[1].id;
+                winnerId = competitors[1]?.id ?? null;
               }
             }
 
