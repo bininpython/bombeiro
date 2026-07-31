@@ -13,6 +13,7 @@ import {
   Target
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { TAF_TESTS, TAF_TEST_ORDER } from '@/lib/taf/constants';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -116,11 +117,9 @@ export default function RoadmapPage() {
         </CardHeader>
         <CardContent>
           <div className="relative space-y-6 pl-4 before:absolute before:inset-y-0 before:left-[21px] before:w-[2px] before:bg-border/50">
-            {DEMO_MILESTONES[activeTab as keyof typeof DEMO_MILESTONES].map((milestone, i, arr) => {
-              const isLast = i === arr.length - 1;
+            {DEMO_MILESTONES[activeTab as keyof typeof DEMO_MILESTONES].map((milestone) => {
               const isAchieved = milestone.status === 'achieved';
               const isInProgress = milestone.status === 'in_progress';
-              const isPending = milestone.status === 'pending';
 
               return (
                 <div key={milestone.id} className="relative flex items-start gap-4">
