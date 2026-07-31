@@ -23,13 +23,6 @@ export default async function DashboardPage() {
     .eq('id', user?.id)
     .single();
 
-  // Buscar XP atual
-  const { data: xpData } = await supabase
-    .from('user_xp')
-    .select('total_xp, current_level')
-    .eq('user_id', user?.id)
-    .single();
-
   // Buscar melhores resultados do usuário para cruzar com a tabela
   const { data: allResults } = await supabase
     .from('training_results')
