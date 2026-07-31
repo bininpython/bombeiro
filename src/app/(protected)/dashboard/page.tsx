@@ -9,7 +9,6 @@ import {
   ClipboardCheck,
   Flame,
   TrendingUp,
-  TrendingDown,
   Minus,
   AlertTriangle,
   CheckCircle2,
