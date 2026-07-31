@@ -290,8 +290,6 @@ export default function NewTrainingPage() {
 
   // Steps 2-3: Input result
   const config = selectedTest ? TAF_TESTS[selectedTest] : null;
-  const Icon = selectedTest ? (TEST_ICONS[selectedTest] ?? Dumbbell) : Dumbbell;
-
   return (
     <div className="mx-auto max-w-lg space-y-6 animate-fade-in">
       <div className="flex items-center gap-3">
