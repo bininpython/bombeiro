@@ -18,7 +18,7 @@ const DEMO_HISTORY = [
 ];
 
 export default function AnalysisPage() {
-  const [activeTab, setActiveTab] = useState<string>(TAF_TEST_ORDER[0]);
+  const [activeTab, setActiveTab] = useState<string>(TAF_TEST_ORDER[0] ?? 'running_2400m');
 
 
   return (

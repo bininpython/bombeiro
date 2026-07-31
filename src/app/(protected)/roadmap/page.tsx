@@ -66,7 +66,7 @@ const DEMO_MILESTONES = {
 };
 
 export default function RoadmapPage() {
-  const [activeTab, setActiveTab] = useState<string>(TAF_TEST_ORDER[0]);
+  const [activeTab, setActiveTab] = useState<string>(TAF_TEST_ORDER[0] ?? 'running_2400m');
 
   return (
     <div className="space-y-6 animate-fade-in">
