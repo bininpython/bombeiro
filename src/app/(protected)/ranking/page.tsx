@@ -153,8 +153,8 @@ export default async function RankingPage() {
             let tied = false;
 
             if (competitors.length >= 2) {
-              const resA = competitors[0].bestResults[slug];
-              const resB = competitors[1].bestResults[slug];
+              const resA = competitors[0]?.bestResults[slug];
+              const resB = competitors[1]?.bestResults[slug];
               
               if (resA && resB) {
                 if (resA.official_score > resB.official_score) {
