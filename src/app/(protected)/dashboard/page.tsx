@@ -71,7 +71,7 @@ export default async function DashboardPage() {
   const diffTime = Math.abs(tafDate.getTime() - today.getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-  const isApproved = finalScoreResult.passing;
+  const isApproved = finalScoreResult.allTestsPassing;
 
   return (
     <div className="space-y-8 animate-fade-in max-w-2xl mx-auto pb-10">
@@ -91,13 +91,13 @@ export default async function DashboardPage() {
             <>
               <CheckCircle2 className="h-10 w-10 text-green-500 mb-2" />
               <h2 className="text-xl font-bold text-green-500">APROVADO HOJE</h2>
-              <p className="text-sm text-muted-foreground">Nota Total: {finalScoreResult.totalScore}</p>
+              <p className="text-sm text-muted-foreground">Nota Total: {finalScoreResult.rawScoreSum}</p>
             </>
           ) : (
             <>
               <AlertTriangle className="h-10 w-10 text-red-500 mb-2" />
               <h2 className="text-xl font-bold text-red-500">REPROVADO HOJE</h2>
-              <p className="text-sm text-muted-foreground">Nota Total: {finalScoreResult.totalScore}</p>
+              <p className="text-sm text-muted-foreground">Nota Total: {finalScoreResult.rawScoreSum}</p>
             </>
           )}
         </Card>
