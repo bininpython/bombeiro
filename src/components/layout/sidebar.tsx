@@ -8,6 +8,8 @@ import {
   LogOut,
   User,
   Trophy,
+  CheckSquare,
+  LineChart
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/shared/logo';
@@ -16,6 +18,8 @@ import { useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Visão Geral', icon: LayoutDashboard },
+  { href: '/treinos', label: 'Minha Ficha', icon: CheckSquare },
+  { href: '/evolucao', label: 'Evolução', icon: LineChart },
   { href: '/ranking', label: 'X1 (Ranking)', icon: Trophy, highlight: true },
   { href: '/treinos/novo', label: 'Registrar Tempo', icon: PlusCircle },
 ];

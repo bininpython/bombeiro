@@ -1,20 +1,40 @@
 import { Metadata } from 'next';
-import { Construction } from 'lucide-react';
+import { createClient } from '@/lib/supabase/server';
+import { startOfWeek, endOfWeek, format } from 'date-fns';
+import WorkoutChecklist from './WorkoutChecklist';
 
 export const metadata: Metadata = {
-  title: 'Histórico de Treinos',
+  title: 'Checklist de Treinos | X1',
 };
 
-export default function TreinosPage() {
+export default async function TreinosPage() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
+  // Buscar logs da semana atual
+  const today = new Date();
+  const start = format(startOfWeek(today, { weekStartsOn: 0 }), 'yyyy-MM-dd');
+  const end = format(endOfWeek(today, { weekStartsOn: 0 }), 'yyyy-MM-dd');
+
+  const { data: logs } = await supabase
+    .from('workout_logs')
+    .select('exercise_id, date')
+    .eq('user_id', user?.id)
+    .gte('date', start)
+    .lte('date', end);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] animate-fade-in text-center px-4">
-      <div className="rounded-full bg-secondary/50 p-4 text-muted-foreground mb-4">
-        <Construction className="h-12 w-12" />
+    <div className="animate-fade-in max-w-2xl mx-auto pb-10 px-2 sm:px-4">
+      <div className="flex flex-col gap-2 py-6">
+        <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+          Minha Ficha
+        </h1>
+        <p className="text-muted-foreground">
+          Acompanhe seus exercícios diários e marque-os como concluídos.
+        </p>
       </div>
-      <h1 className="text-2xl font-bold text-foreground mb-2">Página em Construção</h1>
-      <p className="text-muted-foreground max-w-md">
-        O histórico detalhado de treinos está sendo desenvolvido e estará disponível em breve.
-      </p>
+
+      <WorkoutChecklist initialLogs={logs || []} />
     </div>
   );
 }
