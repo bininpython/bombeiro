@@ -134,7 +134,7 @@ export default async function EvolucaoPage() {
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Trophy className="h-5 w-5 text-fire-500" /> Meta da Semana
           </h3>
-          <Progress value={progressPercent} className="h-4 bg-secondary" indicatorColor="bg-gradient-to-r from-fire-500 to-orange-400" />
+          <Progress value={progressPercent} className="h-4 bg-secondary" indicatorClassName="bg-gradient-to-r from-fire-500 to-orange-400" />
           <div className="mt-4 text-sm text-muted-foreground text-center">
             {progressPercent === 100 
               ? "Incrível! Você fechou a semana 100%!" 
