@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { CheckCircle2, Circle } from 'lucide-react';
 import { format, startOfWeek, addDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { WORKOUT_ROUTINE } from '@/lib/workout/constants';
 import { toggleExerciseCompletion } from '@/app/actions/workout';
