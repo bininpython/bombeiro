@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, PlusCircle, Trophy, User, CheckSquare, LineChart } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, User, CheckSquare, LineChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
